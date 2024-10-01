@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Teach Apps - Settings</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Go-Teach Dashboard</div>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Home</a></li>
+                <li><a href="classes.html">My Classes</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="settings.html" class="active">Settings</a></li>
+                <li><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="settings-content">
+            <h1>Settings</h1>
+            <p>Adjust your account and app preferences.</p>
+
+            <div class="settings-box">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="email">Email Notifications</label>
+                        <input type="checkbox" id="email" checked> Receive updates via email
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">SMS Notifications</label>
+                        <input type="checkbox" id="phone"> Receive updates via SMS
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dark-mode">Dark Mode</label>
+                        <input type="checkbox" id="dark-mode"> Enable dark mode
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Change Password</label>
+                        <input type="password" id="password" placeholder="Enter new password">
+                    </div>
+
+                    <button type="submit" class="save-btn">Save Settings</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Go-Teach Apps. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
