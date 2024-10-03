@@ -1,64 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go-Teach Apps - Teacher Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="dashboard.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo">Go-Teach Dashboard</div>
-        <nav>
-            <ul>
-                <li><a href="dashboard.html" class="active">Home</a></li>
-                <li><a href="classes.html">My Classes</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="settings.html">Settings</a></li>
-                <li><a href="index.html">Logout</a></li>
-            </ul>
-        </nav>
+    <header class="bg-primary text-white p-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">Go-Teach Dashboard</div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="dashboard.html" class="nav-link text-white active">Home</a></li>
+                    <li class="nav-item"><a href="classes.html" class="nav-link text-white">My Classes</a></li>
+                    <li class="nav-item"><a href="profile.html" class="nav-link text-white">Profile</a></li>
+                    <li class="nav-item"><a href="settings.html" class="nav-link text-white">Settings</a></li>
+                    <li class="nav-item"><a href="index.html" class="nav-link text-white">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main class="container mt-4">
         <!-- Jumbotron Section -->
-        <section class="jumbotron">
-            <h1>Hello, Teacher!</h1>
-            <p>Welcome to your dashboard. Manage your classes, assignments, and more.</p>
-            <a href="#" class="btn-primary">Get Started</a>
+        <section class="jumbotron text-center bg-light p-5 rounded">
+            <h1 class="display-4">Hello, Teacher!</h1>
+            <p class="lead">Welcome to your dashboard. Manage your classes, assignments, and more.</p>
+            <a href="#" class="btn btn-primary">Get Started</a>
         </section>
 
-        <section class="dashboard-content">
+        <section class="dashboard-content my-5">
             <h1>Welcome, Teacher</h1>
             <p>Here is an overview of your current classes and activities.</p>
 
-            <div class="dashboard-grid">
-                <div class="dashboard-item">
-                    <h3>Upcoming Classes</h3>
-                    <p>You have 3 upcoming classes this week.</p>
-                    <a href="#">View Schedule</a>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Upcoming Classes</h3>
+                            <p class="card-text">You have 3 upcoming classes this week.</p>
+                            <a href="#" class="btn btn-outline-primary">View Schedule</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="dashboard-item">
-                    <h3>Assignments to Review</h3>
-                    <p>You have 5 assignments pending for review.</p>
-                    <a href="#">Review Now</a>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Assignments to Review</h3>
+                            <p class="card-text">You have 5 assignments pending for review.</p>
+                            <a href="#" class="btn btn-outline-primary">Review Now</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="dashboard-item">
-                    <h3>Student Progress</h3>
-                    <p>View the progress of your students across various subjects.</p>
-                    <a href="#">View Progress</a>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Student Progress</h3>
+                            <p class="card-text">View the progress of your students across various subjects.</p>
+                            <a href="#" class="btn btn-outline-primary">View Progress</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="dashboard-item">
-                    <h3>Messages</h3>
-                    <p>You have 2 new messages from students.</p>
-                    <a href="#">Check Messages</a>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Messages</h3>
+                            <p class="card-text">You have 2 new messages from students.</p>
+                            <a href="#" class="btn btn-outline-primary">Check Messages</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="bg-dark text-white text-center py-3 mt-5">
         <p>&copy; 2024 Go-Teach Apps. All Rights Reserved.</p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
