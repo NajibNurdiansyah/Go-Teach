@@ -13,7 +13,7 @@
     <style>
         /* Background image for header */
         header {
-            background-image: src("bglandingpage.png"); /* Use the provided image URL */
+            background-image: url("https://rgvisionmagazine.com/wp-content/uploads/2023/11/Screenshot-2023-10-25-at-11.50.15-AM.png"); /* Corrected property */
             background-size: cover;
             background-position: center;
             height: 500px;
@@ -53,32 +53,45 @@
         .testimonials .small {
             color: #888;
         }
+
+        /* Adjust body padding to account for fixed navbar */
+        body {
+            padding-top: 70px; /* Adjust this value if navbar height changes */
+        }
     </style>
 </head>
 <body>
-    <!-- Responsive navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #005bb5;">
         <div class="container px-5">
             <a class="navbar-brand" href="#!">Go Teach</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Login</a></li>
+                    <li class="nav-item">
+                        <!-- Changed from link to button -->
+                        <a class="btn btn-outline-light" href="index.html">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- Header with background image -->
-    <header class="bg-dark py-5" style="background-image: url('top-view-assortment-back-school-still-life-elements.jpg'); background-size: cover; background-position: center;">
+    <header class="bg-dark py-5">
         <div class="container px-5">
             <div class="row gx-5 justify-content-center">
                 <div class="col-lg-6">
                     <div class="text-center my-5">
                         <h1 class="display-5 fw-bolder text-white mb-2">Introducing Go Teach, a new way to learn</h1>
-                        <p class="lead mb-4" style="color: #f0f0f0;">Connect students and teachers around you with our app. Create a responsive and engaging learning experience that makes access easy for all users!</p>
+                        <p class="lead mb-4" style="color: #ffffff;">
+                            Connect students and teachers around you with our app. Create a responsive and engaging learning experience that makes access easy for all users!
+                        </p>
                         <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
-                            <a class="btn" style="background-color: #003366; color: white;" href="#features">Get Started</a>
+                            <a class="btn btn-custom" href="#features">Get Started</a>
                             <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
                         </div>
                     </div>
