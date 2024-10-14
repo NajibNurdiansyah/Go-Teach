@@ -1,43 +1,45 @@
-// Memastikan DOM siap sebelum menjalankan JavaScript
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
     // Fungsi untuk memberikan pesan saat tautan di klik
     function handleLinkClick(event) {
         event.preventDefault();
-        const linkText = event.target.innerText;
+        const linkText = $(this).text();
         alert(`${linkText} feature is not yet implemented!`);
     }
 
-    // Memilih semua elemen tautan dalam dashboard-item
-    const dashboardLinks = document.querySelectorAll('.dashboard-item a');
-
-    // Menambahkan event listener ke setiap tautan
-    dashboardLinks.forEach(link => {
-        link.addEventListener('click', handleLinkClick);
-    });
+    // Memilih semua elemen tautan dalam dashboard-item dan menambahkan event listener
+    $('.dashboard-item a').on('click', handleLinkClick);
 
     // Fungsi untuk animasi masuk (fade-in) ketika halaman dimuat
-    const dashboardItems = document.querySelectorAll('.dashboard-item');
-    dashboardItems.forEach((item, index) => {
-        setTimeout(() => {
-            item.style.opacity = '1';
-            item.style.transform = 'translateY(0)';
-        }, index * 200); // Animasi berurutan setiap 200ms
+    $('.dashboard-item').each(function (index) {
+        $(this).delay(index * 200).animate({
+            opacity: 1,
+            // jQuery animate tidak mendukung properti 'transform' secara langsung.
+            // Jadi, kita gunakan CSS class untuk transformasi.
+        }, 500);
+    });
+
+    // Menambahkan class untuk mengatur transformasi setelah animasi fade-in
+    $('.dashboard-item').each(function () {
+        $(this).css('transform', 'translateY(0)');
     });
 
     // Animasi hover pada setiap dashboard-item
-    dashboardItems.forEach(item => {
-        item.addEventListener('mouseover', function () {
-            item.style.transform = 'scale(1.05)'; // Menambahkan efek zoom saat hover
-            item.style.boxShadow = '0px 4px 15px rgba(0, 0, 0, 0.2)'; // Menambahkan shadow
-        });
-        item.addEventListener('mouseout', function () {
-            item.style.transform = 'scale(1)'; // Mengembalikan ukuran normal
-            item.style.boxShadow = 'none'; // Menghilangkan shadow
-        });
-    });
+    $('.dashboard-item').hover(
+        function () {
+            $(this).css({
+                transform: 'scale(1.05)',
+                boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.2)'
+            });
+        },
+        function () {
+            $(this).css({
+                transform: 'scale(1)',
+                boxShadow: 'none'
+            });
+        }
+    );
 
     // Pesan selamat datang dinamis berdasarkan waktu
-    const jumbotronHeading = document.querySelector('.jumbotron h1');
     const currentHour = new Date().getHours();
     let greeting;
 
@@ -49,38 +51,127 @@ document.addEventListener('DOMContentLoaded', function () {
         greeting = "Good Evening, Teacher!";
     }
 
-    jumbotronHeading.textContent = greeting;
+    $('.jumbotron h1').text(greeting);
 
     // Fungsi untuk menampilkan waktu dan tanggal saat ini di footer
     function updateTime() {
-        const footer = document.querySelector('footer p');
         const currentTime = new Date();
         const formattedTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         const formattedDate = currentTime.toLocaleDateString();
-        footer.innerHTML = `&copy; 2024 Go-Teach Apps. All Rights Reserved. <br> Current time: ${formattedDate}, ${formattedTime}`;
+        $('footer p').html(`&copy; 2024 Go-Teach Apps. All Rights Reserved.<br> Current time: ${formattedDate}, ${formattedTime}`);
     }
 
     // Perbarui waktu setiap 1 menit
     setInterval(updateTime, 60000);
     updateTime(); // Memanggil fungsi saat halaman dimuat
+
+    // === Tambahan Fitur ===
+
+    // 1. Smooth Scroll untuk Tautan dengan Hash (#)
+    $('a[href*="#"]').on('click', function (event) {
+        // Pastikan hash memiliki nilai sebelum menggulir
+        if (this.hash !== "") {
+            event.preventDefault();
+            const hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    // 2. Menambahkan Tooltips pada Tautan
+    // Inisialisasi tooltips Bootstrap 5
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+
+    // Menambahkan atribut tooltip pada semua tautan di dashboard-item
+    $('.dashboard-item a').attr('data-bs-toggle', 'tooltip').attr('title', 'Click to explore this feature!');
+
+    // 3. Konfirmasi Sebelum Logout
+    $('a[href="signin.html"]').on('click', function (event) {
+        const confirmLogout = confirm("Are you sure you want to logout?");
+        if (!confirmLogout) {
+            event.preventDefault();
+        }
+    });
+
+    // 4. Menampilkan Notifikasi Selamat Datang Menggunakan Modal Bootstrap
+    // Tambahkan modal di HTML atau buat secara dinamis
+    // Berikut adalah pembuatan modal secara dinamis
+
+    // Membuat elemen modal
+    const welcomeModal = `
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="welcomeModalLabel">Welcome</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Welcome back to your dashboard!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    `;
+
+    // Menambahkan modal ke body
+    $('body').append(welcomeModal);
+
+    // Menampilkan modal saat halaman dimuat
+    var myModal = new bootstrap.Modal(document.getElementById('welcomeModal'), {
+        keyboard: false
+    });
+    myModal.show();
+
+    // 5. Menambahkan Efek Accordion pada Seksi Informasi
+    $('.dashboard-item h3').on('click', function () {
+        $(this).next('p').slideToggle(); // Menampilkan/menyembunyikan deskripsi di bawah judul saat diklik
+    });
+
+    // Sembunyikan deskripsi saat halaman dimuat
+    $('.dashboard-item p').hide();
+
+    // 6. Filter Dashboard Items
+    $('#search').on('keyup', function () {
+        const searchTerm = $(this).val().toLowerCase();
+        $('.dashboard-item').filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(searchTerm) > -1);
+        });
+    });
+
+    // === Penambahan CSS untuk Animasi Transformasi ===
+    // Menambahkan CSS melalui jQuery
+    $('head').append(`
+    <style>
+        .dashboard-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .dashboard-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dashboard-item:hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+    `);
 });
-
-// CSS tambahan untuk efek animasi dan hover
-document.write(`
-<style>
-    .dashboard-item {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .dashboard-item:hover {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .btn-primary:hover {
-        background-color: #0056b3;
-        transition: background-color 0.3s ease;
-    }
-</style>
-`);
