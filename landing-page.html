@@ -38,22 +38,6 @@
             color: white;
         }
 
-        /* Flexbox for pricing cards */
-        .pricing-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        /* Flexbox for testimonials */
-        .testimonial-container {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
-
         /* Custom pricing font size */
         .pricing-card span {
             font-size: 24px;
@@ -64,6 +48,12 @@
         }
 
         /* Custom testimonial styling */
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .testimonials p {
             font-size: 18px;
             margin-bottom: 20px;
@@ -141,75 +131,80 @@
                 <h2 class="fw-bolder">Pay as you Choose</h2>
                 <p class="lead mb-0">With some of the offers we provide</p>
             </div>
-            <!-- Flexbox container for pricing cards -->
-            <div class="pricing-container">
+            <div class="row gx-5 justify-content-center">
                 <!-- Pricing card basic -->
-                <div class="card pricing-card" style="flex: 1; max-width: 300px;">
-                    <div class="card-body p-5">
-                        <div class="small text-uppercase fw-bold text-muted">Basic</div>
-                        <div class="mb-3">
-                            <span>Rp</span> 
-                            <span class="price fw-bold">125.000</span>
-                            <span class="text-muted">/ mo.</span>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="card pricing-card">
+                        <div class="card-body p-5">
+                            <div class="small text-uppercase fw-bold text-muted">Basic</div>
+                            <div class="mb-3">
+                                <span>Rp</span> 
+                                <span class="price fw-bold">125.000</span>
+                                <span class="text-muted">/ mo.</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Biaya terjangkau</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Pemula dengan anggaran terbatas</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Akses ke materi dasar</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Materi terbatas</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Sangat fleksibel, bisa belajar sendiri</li>
+                                <li class="mb-2 text-muted"><i class="bi bi-x"></i> Sertifikat</li>
+                                <li class="mb-2 text-muted"><i class="bi bi-x"></i> Pembelajaran dengan pemahaman dasar</li>
+                                <li class="mb-2 text-muted"><i class="bi bi-x"></i> Ada tugas dan evaluasi </li>
+                                <li class="text-muted"><i class="bi bi-x"></i> Akses ke beberapa fitur teknologi</li>
+                            </ul>
+                            <div class="d-grid"><a class="btn btn-custom" href="#!">Choose plan</a></div>
                         </div>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Biaya terjangkau</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Pemula dengan anggaran terbatas</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Akses ke materi dasar</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Materi terbatas</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Sangat fleksibel, bisa belajar sendiri</li>
-                            <li class="mb-2 text-muted"><i class="bi bi-x"></i> Sertifikat</li>
-                            <li class="mb-2 text-muted"><i class="bi bi-x"></i> Pembelajaran dengan pemahaman dasar</li>
-                            <li class="mb-2 text-muted"><i class="bi bi-x"></i> Ada tugas dan evaluasi </li>
-                            <li class="text-muted"><i class="bi bi-x"></i> Akses ke beberapa fitur teknologi</li>
-                        </ul>
-                        <div class="d-grid"><a class="btn btn-custom" href="#!">Choose plan</a></div>
                     </div>
                 </div>
                 <!-- Pricing card standard -->
-                <div class="card pricing-card" style="flex: 1; max-width: 300px;">
-                    <div class="card-body p-5">
-                        <div class="small text-uppercase fw-bold">
-                            <i class="bi bi-star-fill text-warning"></i> Standart
+                <div class="col-lg-6 col-xl-4">
+                    <div class="card pricing-card">
+                        <div class="card-body p-5">
+                            <div class="small text-uppercase fw-bold">
+                                <i class="bi bi-star-fill text-warning"></i> Standart
+                            </div>
+                            <div class="mb-3">
+                                <span>Rp</span> 
+                                <span class="price fw-bold">200.000</span>
+                                <span class="text-muted">/ mo.</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i><strong> Biaya masih terjangkau</strong></li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Akses materi lebih mendalam</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Tanya jawab</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Sertifikat standar</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Fleksibel tapi ada jadwal tugas</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Ada tugas dan evaluasi dasar</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Pembelajaran dengan pemahaman dasar</li>
+                                <li class="text-muted"><i class="bi bi-x"></i> Teknologi baru dan fitur lanjutan</li>
+                            </ul>
+                            <div class="d-grid"><a class="btn btn-custom" href="#!">Choose plan</a></div>
                         </div>
-                        <div class="mb-3">
-                            <span>Rp</span> 
-                            <span class="price fw-bold">200.000</span>
-                            <span class="text-muted">/ mo.</span>
-                        </div>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i><strong> Biaya masih terjangkau</strong></li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Akses materi lebih mendalam</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Tanya jawab</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Sertifikat standar</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Fleksibel tapi ada jadwal tugas</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Ada tugas dan evaluasi dasar</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Pembelajaran dengan pemahaman dasar</li>
-                            <li class="text-muted"><i class="bi bi-x"></i> Teknologi baru dan fitur lanjutan</li>
-                        </ul>
-                        <div class="d-grid"><a class="btn btn-custom" href="#!">Choose plan</a></div>
                     </div>
                 </div>
                 <!-- Pricing card premium -->
-                <div class="card pricing-card" style="flex: 1; max-width: 300px;">
-                    <div class="card-body p-5">
-                        <div class="small text-uppercase fw-bold text-muted">Premium</div>
-                        <div class="mb-3">
-                            <span>Rp</span> 
-                            <span class="price fw-bold">300.000</span>
-                            <span class="text-muted">/ mo.</span>
+                <div class="col-lg-6 col-xl-4">
+                    <div class="card pricing-card">
+                        <div class="card-body p-5">
+                            <div class="small text-uppercase fw-bold text-muted">Premium</div>
+                            <div class="mb-3">
+                                <span>Rp</span> 
+                                <span class="price fw-bold">300.000</span>
+                                <span class="text-muted">/ mo.</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i><strong> Paling mahal, namun sepadan</strong></li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Materi eksklusif</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Konsultasi pribadi</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Sertifikat resmi oleh profesional</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Diskusi intensif dengan pengajar</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Tugas dan evaluasi dasar</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Membantu peningkatan karir dan profesionalisme</li>
+                                <li class="mb-2"><i class="bi bi-check text-dark"></i> Teknologi terbaru dan fitur lanjutan</li>
+                            </ul>
+                            <div class="d-grid"><a class="btn btn-custom" href="#!">Choose plan</a></div>
                         </div>
-                        <ul class="list-unstyled mb-4">
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i><strong> Paling mahal, namun sepadan</strong></li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Materi eksklusif</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Konsultasi pribadi</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Sertifikat resmi oleh profesional</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Diskusi intensif dengan pengajar</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Tugas dan evaluasi dasar</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Membantu peningkatan karir dan profesionalisme</li>
-                            <li class="mb-2"><i class="bi bi-check text-dark"></i> Teknologi terbaru dan fitur lanjutan</li>
-                        </ul>
-                        <div class="d-grid"><a class="btn btn-custom" href="#!">Choose plan</a></div>
                     </div>
                 </div>
             </div>
@@ -223,32 +218,32 @@
                 <h2 class="fw-bolder">Customer testimonials</h2>
                 <p class="lead mb-0">"Our customers love learning here"</p>
             </div>
-            <div class="testimonial-container">
-                <!-- Testimonial 1-->
-                <div class="card mb-4">
-                    <div class="card-body p-4">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0">
-                                <i class="bi bi-chat-right-quote-fill text-dark fs-1"></i>
-                            </div>
-                            <div class="ms-4">
-                                <p id="testimonial" class="type-effect mb-1"></p>
-                                <div class="small text-muted">- Kemala, Lombok</div>
+            <div class="testimonials">
+                <div class="col-lg-6">
+                   <!-- Testimonial 1-->
+                   <div class="card mb-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="bi bi-chat-right-quote-fill text-dark fs-1"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <p id="testimonial" class="type-effect mb-1"></p>
+                                    <div class="small text-muted">- Kemala, Lombok</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Testimonial 2-->
-                <div class="card mb-4">
-                    <div class="card-body p-4">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0">
-                                <i class="bi bi-chat-right-quote-fill text-dark fs-1"></i>
-                            </div>
-                            <div class="ms-4">
-                                <p id="testimonial2" class="mb-1"></p>
-                                <div class="small text-muted">- Lufi, Banjarnegara</div>
+                    <!-- Testimonial 2-->
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0"><i class="bi bi-chat-right-quote-fill text-dark fs-1"></i></div>
+                                <div class="ms-4">
+                                    <p id="testimonial2" class="mb-1"></p>
+                                    <div class="small text-muted">- Lufi, Banjarnegara</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -263,17 +258,6 @@
     <!-- jQuery Script -->
     <script>
         $(document).ready(function() {
-            // Smooth scrolling for internal links
-            $('a[href^="#"]').on('click', function(event) {
-                var target = $(this.getAttribute('href'));
-                if (target.length) {
-                    event.preventDefault();
-                    $('html, body').stop().animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                }
-            });
-
             // Typewriter effect for testimonials
             let testimonialText1 = "Go Teach telah membantu saya meningkatkan kemampuan belajar online dengan cepat dan mudah!";
             let testimonialText2 = "Go Teach menyediakan berbagai pilihan mata pelajaran yang luas. Saya berhasil menemukan instruktur bahasa asing yang membantu saya belajar dengan cepat dan efektif. Sangat saya rekomendasikan!";
