@@ -100,39 +100,7 @@ $(document).ready(function () {
         }
     });
 
-    // 4. Menampilkan Notifikasi Selamat Datang Menggunakan Modal Bootstrap
-    // Tambahkan modal di HTML atau buat secara dinamis
-    // Berikut adalah pembuatan modal secara dinamis
-
-    // Membuat elemen modal
-    const welcomeModal = `
-    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="welcomeModalLabel">Welcome</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            Welcome back to your dashboard!
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    `;
-
-    // Menambahkan modal ke body
-    $('body').append(welcomeModal);
-
-    // Menampilkan modal saat halaman dimuat
-    var myModal = new bootstrap.Modal(document.getElementById('welcomeModal'), {
-        keyboard: false
-    });
-    myModal.show();
-
+    
     // 5. Menambahkan Efek Accordion pada Seksi Informasi
     $('.dashboard-item h3').on('click', function () {
         $(this).next('p').slideToggle(); // Menampilkan/menyembunyikan deskripsi di bawah judul saat diklik
