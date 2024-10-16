@@ -175,3 +175,16 @@ $(document).ready(function () {
     </style>
     `);
 });
+
+// Mengubah semua ukuran font-size
+$('document').ready(function() {
+    $("#one").click(function() {
+        $("html").css("font-size", "12px");
+    })
+    $("#two").click(function() {
+        $("html").css("font-size", "16px");
+    })
+    $("#three").click(function() {
+        $("html").css("font-size", "20px");
+    })
+    })

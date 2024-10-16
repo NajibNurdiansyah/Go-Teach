@@ -144,7 +144,7 @@ main {
 }
 
 .dashboard-item h3 {
-    font-size: 22px;
+    font-size: 1.25rem;
     margin-top: 10px;
     color: var(--primary-color);
 }
@@ -165,6 +165,32 @@ main {
 .dashboard-item a:hover {
     color: #005bb5;
     text-decoration: underline;
+}
+
+/* increase & decrease button */
+.buttons {
+    width: 98%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-bottom: 0;
+    margin-right: 100px;
+}
+
+.buttons .btn {
+padding: 0 10px;
+display: inline-flex;
+background: #ddd;
+color: #ffffff;
+margin-left: 10px;
+cursor: pointer;
+}
+
+#two {
+    font-size: 1.2rem;
+}
+#three {
+    font-size: 1.3rem;
 }
 
 /* Footer */
