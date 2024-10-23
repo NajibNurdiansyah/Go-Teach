@@ -28,3 +28,5 @@ function type() {
 
 // Mulai efek pengetikan
 type();
+
+ 
