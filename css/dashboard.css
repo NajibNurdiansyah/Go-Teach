@@ -140,80 +140,147 @@ main {
 
 .dashboard-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .dashboard-item h3 {
-    font-size: 1.25rem;
-    margin-top: 10px;
-    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 15px;
 }
 
 .dashboard-item p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-top: 10px;
 }
 
 .dashboard-item a {
+    color: var(--primary-color);
     text-decoration: none;
-    color: var(--secondary-color);
     font-weight: bold;
-    transition: color 0.3s ease;
+    display: block;
+    margin-top: 10px;
 }
 
 .dashboard-item a:hover {
-    color: #005bb5;
-    text-decoration: underline;
-}
-
-/* increase & decrease button */
-.buttons {
-    width: 98%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    margin-bottom: 0;
-    margin-right: 100px;
-}
-
-.buttons .btn {
-padding: 0 10px;
-display: inline-flex;
-background: #ddd;
-color: #ffffff;
-margin-left: 10px;
-cursor: pointer;
-}
-
-#two {
-    font-size: 1.2rem;
-}
-#three {
-    font-size: 1.3rem;
+    color: var(--hover-color);
 }
 
 /* Footer */
 footer {
     background-color: var(--primary-color);
     color: white;
+    padding: 20px 0;
     text-align: center;
-    padding: 20px;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
     font-size: 14px;
 }
 
-/* Responsive for smaller screens */
-@media (max-width: 768px) {
+/* Responsive Design Adjustments */
+
+/* Mengatur ulang tata letak untuk layar kecil */
+@media (max-width: 1024px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
     nav ul {
         flex-direction: column;
         gap: 10px;
     }
 
-    .dashboard-grid {
-        padding: 0 15px;
+    .logo {
+        margin-bottom: 10px;
     }
 
+    /* Jumbotron */
+    .jumbotron h1 {
+        font-size: 2rem;
+    }
+
+    .jumbotron p {
+        font-size: 1rem;
+    }
+
+    .jumbotron .btn-primary {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+/* Untuk tablet dan layar sedang */
+@media (max-width: 768px) {
+    /* Grid Layout untuk konten dashboard */
+    .row {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Memastikan elemen dashboard terpusat dan mengambil seluruh lebar layar pada tablet */
     .dashboard-item {
-        margin-bottom: 20px;
+        margin: 20px auto;
+        width: 90%;
+        text-align: center;
+    }
+
+    /* Jumbotron */
+    .jumbotron {
+        padding: 30px 15px;
+    }
+
+    .jumbotron h1 {
+        font-size: 1.75rem;
+    }
+
+    .jumbotron p {
+        font-size: 1rem;
+    }
+
+    /* Atur ulang tombol teks */
+    .buttons {
+        justify-content: center;
+    }
+}
+
+/* Untuk layar smartphone kecil */
+@media (max-width: 480px) {
+    /* Jumbotron */
+    .jumbotron h1 {
+        font-size: 1.5rem;
+    }
+
+    .jumbotron p {
+        font-size: 0.9rem;
+    }
+
+    .jumbotron .btn-primary {
+        font-size: 0.85rem;
+        padding: 6px 12px;
+    }
+
+    /* Mengubah tata letak untuk menyesuaikan dengan layar kecil */
+    .dashboard-item {
+        width: 95%;
+        margin: 10px auto;
+    }
+
+    .dashboard-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Buttons */
+    .buttons {
+        margin-right: 0;
+        justify-content: center;
+    }
+
+    .buttons .btn {
+        font-size: 0.9rem;
     }
 }
