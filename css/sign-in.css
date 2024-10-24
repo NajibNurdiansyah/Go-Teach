@@ -2,55 +2,107 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     background: url('img/login10.img.png') no-repeat center center fixed;
     background-size: cover;
-    background-color: #ececec; /* Warna fallback jika gambar gagal dimuat */
+    background-color: #ececec; /* Fallback color */
 }
 
 /*------------ Login container ------------*/
 
-.box-area{
+.box-area {
     width: 930px;
+    max-width: 100%; /* Max width to ensure it fits small screens */
+    margin: 20px auto; /* Center the container */
+    padding: 15px; /* Add some padding */
 }
 
 /*------------ Right box ------------*/
 
-.right-box{
-    padding: 40px 30px 40px 40px;
-    background: rgba(255, 255, 255, 0.9); /* Menambahkan latar belakang semi-transparan untuk keterbacaan */
-    border-radius: 20px; /* Menambahkan border-radius untuk estetika */
+.right-box {
+    padding: 40px 30px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for readability */
+    border-radius: 20px;
 }
 
-/*------------ Custom Placeholder ------------*/
-
-::placeholder{
+/* Custom Placeholder */
+::placeholder {
     font-size: 16px;
 }
 
-.rounded-4{
+.rounded-4 {
     border-radius: 20px;
 }
-.rounded-5{
+
+.rounded-5 {
     border-radius: 30px;
 }
 
+/*------------ For medium screens------------*/
 
-/*------------ For small screens------------*/
-
-@media only screen and (max-width: 768px){
-
-     .box-area{
+@media (max-width: 768px) {
+    .box-area {
+        width: 100%;
         margin: 0 10px;
+        padding: 10px; /* More padding to make sure content fits nicely */
+    }
 
-     }
-     .left-box{
-        height: 100px;
-        overflow: hidden;
-     }
-     .right-box{
-        padding: 20px;
-     }
+    .left-box {
+        padding: 20px; /* Add padding */
+        text-align: center; /* Center text for better readability */
+    }
 
+    .left-box .featured-image img {
+        width: 200px; /* Reduce logo size for smaller screens */
+    }
+
+    .right-box {
+        padding: 20px; /* Reduce padding */
+    }
+
+    .right-box h2 {
+        font-size: 24px; /* Adjust heading size */
+    }
+
+    .btn {
+        font-size: 14px; /* Smaller font size for buttons */
+    }
+}
+
+/*------------ For small screens (mobile) ------------*/
+
+@media (max-width: 576px) {
+    .box-area {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .left-box {
+        padding: 10px; /* Reduce padding for extra small screens */
+    }
+
+    .left-box .featured-image img {
+        width: 150px; /* Further reduce logo size */
+    }
+
+    .right-box {
+        padding: 15px; /* Further reduce padding */
+    }
+
+    .btn {
+        font-size: 12px; /* Smaller font size for buttons */
+    }
+
+    .right-box h2 {
+        font-size: 20px; /* Adjust heading size */
+    }
+
+    .right-box p {
+        font-size: 14px; /* Adjust paragraph size */
+    }
+
+    .input-group {
+        margin-bottom: 1rem; /* Adjust spacing between input groups */
+    }
 }
