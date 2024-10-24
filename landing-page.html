@@ -12,96 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- jQuery CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <style>
-        /* Background image for header */
-        header {
-            background-image: url("https://rgvisionmagazine.com/wp-content/uploads/2023/11/Screenshot-2023-10-25-at-11.50.15-AM.png");
-            background-size: cover;
-            background-position: center;
-            height: 500px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-        }
-
-        /* Custom styling for the buttons */
-        .btn-custom {
-            background-color: #003366;
-            color: white;
-        }
-
-        .btn-custom:hover {
-            background-color: #002244;
-            color: white;
-        }
-
-        /* Custom pricing font size */
-        .pricing-card span {
-            font-size: 24px;
-        }
-
-        .pricing-card .price {
-            font-size: 40px;
-        }
-
-        /* Custom testimonial styling */
-        .testimonials {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .testimonials p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .testimonials .small {
-            color: #888;
-        }
-
-        /* Adjust body padding to account for fixed navbar */
-        body {
-            padding-top: 70px;
-        }
-
-        /* Ensure testimonial text wraps properly */
-        #testimonial, #testimonial2 {
-            width: 100%;
-            max-width: 100%;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            white-space: normal;
-        }
-
-        /* Extra padding for the pricing section on smaller screens */
-        @media (max-width: 768px) {
-            .pricing-card {
-                margin-bottom: 20px;
-            }
-        }
-
-        /* Styling for Back to Top button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            display: none;
-            z-index: 100;
-            font-size: 24px;
-            color: white;
-            background-color: #005bb5;
-            border-radius: 50%;
-            padding: 10px;
-        }
-
-        .back-to-top:hover {
-            background-color: #003366;
-        }
-    </style>
+    <link rel="stylesheet" href="css/landingpage.css">
 </head>
 <body>
     <!-- Fixed navbar -->
@@ -278,50 +189,6 @@
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- jQuery Script -->
-    <script>
-        $(document).ready(function() {
-            // Typewriter effect for testimonials
-            let testimonialText1 = "Go Teach telah membantu saya meningkatkan kemampuan belajar online dengan cepat dan mudah!";
-            let testimonialText2 = "Go Teach menyediakan berbagai pilihan mata pelajaran yang luas. Saya berhasil menemukan instruktur bahasa asing yang membantu saya belajar dengan cepat dan efektif. Sangat saya rekomendasikan!";
-            let index1 = 0, index2 = 0;
-
-            function typeWriter1() {
-                if (index1 < testimonialText1.length) {
-                    $('#testimonial').append(testimonialText1.charAt(index1));
-                    index1++;
-                    setTimeout(typeWriter1, 50);
-                }
-            }
-
-            function typeWriter2() {
-                if (index2 < testimonialText2.length) {
-                    $('#testimonial2').append(testimonialText2.charAt(index2));
-                    index2++;
-                    setTimeout(typeWriter2, 50);
-                }
-            }
-
-            // Start the typewriter effect for both testimonials
-            typeWriter1();
-            setTimeout(typeWriter2, 3000); // Delay for the second testimonial to start after the first
-
-            // Show or hide the "Back to Top" button based on scroll position
-            $(window).scroll(function() {
-                if ($(this).scrollTop() > 300) {
-                    $('.back-to-top').fadeIn();
-                } else {
-                    $('.back-to-top').fadeOut();
-                }
-            });
-
-            // Smooth scroll to the top when the "Back to Top" button is clicked
-            $('.back-to-top').click(function(e) {
-                e.preventDefault();
-                $('html, body').animate({scrollTop: 0}, '300');
-            });
-        });
-        
-    </script>
+    <script src="js/landing-page.js"></script>
 </body>
 </html>
