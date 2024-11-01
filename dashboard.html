@@ -10,17 +10,12 @@
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
-<body>
+<<body>
     <header class="bg-primary text-white p-3">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="logo">Go-Teach Dashboard</div>
-            <!-- Burger Menu Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon bg-light"></span>
-                <span class="navbar-toggler-icon bg-light"></span>
-                <span class="navbar-toggler-icon bg-light"></span>
-            </button>
-            <nav class="collapse navbar-collapse" id="navbarNav">
+            <!-- Navigation for larger screens -->
+            <nav class="d-none d-md-block">
                 <ul class="nav">
                     <li class="nav-item"><a href="dashboard.html" class="nav-link text-white active">Home</a></li>
                     <li class="nav-item"><a href="classes.html" class="nav-link text-white">My Classes</a></li>
@@ -29,9 +24,25 @@
                     <li class="nav-item"><a href="signin.html" class="nav-link text-white">Logout</a></li>
                 </ul>
             </nav>
+            <!-- Burger Menu Button for mobile screens -->
+            <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon bg-light"></span>
+                <span class="navbar-toggler-icon bg-light"></span>
+                <span class="navbar-toggler-icon bg-light"></span>
+            </button>
         </div>
+        <!-- Collapsible Navbar for mobile screens -->
+        <nav class="collapse navbar-collapse d-md-none" id="navbarNav">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="dashboard.html" class="nav-link text-white active">Home</a></li>
+                <li class="nav-item"><a href="classes.html" class="nav-link text-white">My Classes</a></li>
+                <li class="nav-item"><a href="profile.html" class="nav-link text-white">Profile</a></li>
+                <li class="nav-item"><a href="settings.html" class="nav-link text-white">Settings</a></li>
+                <li class="nav-item"><a href="signin.html" class="nav-link text-white">Logout</a></li>
+            </ul>
+        </nav>
     </header>
-
+    
     <main class="container mt-4">
         <!-- Jumbotron Section -->
         <section class="jumbotron text-center bg-light p-5 rounded">
